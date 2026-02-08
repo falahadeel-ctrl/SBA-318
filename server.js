@@ -45,7 +45,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/home', function(req,res){
    res.render('index', {title: 'falah', content: "you cant see me"}) 
 })
-app.use("/user",routermain);
+app.use("/",routermain);
 
 
 //global error handling
