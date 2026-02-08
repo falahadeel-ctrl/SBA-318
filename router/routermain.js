@@ -5,8 +5,10 @@ const router = express.Router();
 
 router.route('/')
 .post((req, res) => {
+    const name = req.body.name;
+    const email =req.body.email;
 
- const {name, email } =req.body;
+//  const {name, email } =req.body;
 
     if (!name){
         return res.status(400).jason({error:"name required"});
