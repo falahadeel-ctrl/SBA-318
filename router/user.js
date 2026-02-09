@@ -13,7 +13,7 @@ router.route('/')
     if (!name){
         return res.status(400).json({error:"name required"});
     }
-    else {
+    
     const newUser = {
         id: user.length + 1, 
         name: name,
@@ -21,14 +21,16 @@ router.route('/')
     };
    
     user.push(newUser); 
-}
+
     res.status(201).json(newUser); 
 
 })
+
+//filtering
 .get( (req, res) => {
     let result = user;
     if (req.query.name) {
-        result = user.filter(u => u.name.includes(req.query.name));
+        result = user.filter(u => u.name.includes(req.query.name)); //filters onyl based on name cuz of req.query.name
     }
     res.json(result);
 });
@@ -46,7 +48,7 @@ router.route("/:id")
 
     // const userIndex = db.users.findIndex(user => user.id === id);
 
-    let updated = user.find( function (u){
+    let updated = user.find( function (u){  // u is the object in array
         if(u.id === id){
             let keys =Object.keys(req.body);
             for (let i=0;i<keys.length;i++){

@@ -1,10 +1,12 @@
 //import
 import express from 'express';
-import {user,home,interests} from './db.js';
-import routermain from './router/user.js'
+// import {user,home,interests} from './db.js';
+import home from './router/home.js';
+import user from './router/user.js';
+import interests from './router/interests.js';
 import { logreq,error,timing } from './middleware/middleware.js';
 import fs from 'fs';
-import { title } from 'process';
+// import { title } from 'process';
 
 
 //setup
@@ -40,13 +42,17 @@ app.use(logreq)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(timing)
-
+app.use("/home",home);
+app.use("/user",user);
+app.use("/interests",interests);
 
 //rotues
 app.get('/home', function(req,res){
    res.render('index', {title: 'falah', content: "you cant see me"}) 
 })
-app.use("/",routermain);
+app.use("/user",user);
+app.use("/home",home);
+app.use("/interests",interests);
 
 
 //global error handling

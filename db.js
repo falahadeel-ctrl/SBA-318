@@ -2,6 +2,10 @@ export const user = [
     {id: 1,
      name: "Falah",
      email:"falahadeel74@gmail.com"
+    },
+    {id:2,
+     name:"dylan",
+     email:"dylan@gmail.com"
     }
 ];
 
