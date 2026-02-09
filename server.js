@@ -47,8 +47,8 @@ app.use("/user",user);
 app.use("/interests",interests);
 
 //rotues
-app.get('/home', function(req,res){
-   res.render('index', {title: 'falah', content: "you cant see me"}) 
+app.get('/', function(req,res){
+   res.render('index', {title: 'falah', content: "add a user"}) 
 })
 app.use("/user",user);
 app.use("/home",home);
