@@ -6,13 +6,15 @@ export const user = [
 ];
 
 export const home =[
-    {address: "random address",
+    {id:1,
+        address: "random address",
      mail: "random mail",
     subdivision: "random subdivision" 
    }
 ];
 export const interests =[
-    { games: "batman",
+    { id:1,
+        games: "batman",
       books: "percijackson",
       movie: "intersteller"
      }
