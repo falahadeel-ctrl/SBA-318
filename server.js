@@ -1,8 +1,8 @@
 //import
 import express from 'express';
 import {user,home,interests} from './db.js';
-import routermain from './router/routermain.js'
-import { logreq,error } from './middleware/middleware.js';
+import routermain from './router/user.js'
+import { logreq,error,timing } from './middleware/middleware.js';
 import fs from 'fs';
 import { title } from 'process';
 
@@ -39,6 +39,7 @@ app.use(express.static('./styles'));   //used for searching and connecting stati
 app.use(logreq)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(timing)
 
 
 //rotues
